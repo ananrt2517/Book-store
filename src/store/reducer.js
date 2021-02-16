@@ -1,27 +1,19 @@
-import { DECREMENT } from './actions';
+import { SatelliteSharp } from '@material-ui/icons';
+import { GET_BOOK_SUCCESS } from './actions';
 
 
 const INITIAL_STATE = {
-
-    count: 0,
+    books: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
-
     switch (action.type) {
-
-        case DECREMENT:
-
-           return {
-
-             ...state, count: state.count - 1,
-
-           };
-
-         default: return state;
-
+        case GET_BOOK_SUCCESS:
+            return {
+                ...state, books: action.payload
+            };
+        default: return state;
     }
-
 };
 
 export default reducer;
