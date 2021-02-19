@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import searchStyle from './style';
 import { getBookRequest } from '../../store/actions';
 import { useDispatch } from "react-redux"
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => searchStyle(theme));
 
@@ -12,6 +13,7 @@ export default function Search() {
     const [term, setTerm] = useState('')
     const classes = useStyles();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleQuery = (term) => {
         return term.split(" ").join("+");
@@ -28,7 +30,11 @@ export default function Search() {
                         <SearchIcon />
                     </div>
                     <InputBase
-                        onChange={(event) => setTerm(event.target.value)}
+                        onChange={(event) => {
+                            if(history.location.pathname === "/")
+                                setTerm(event.target.value)
+                            else history.push("/");
+                        }}
                         value={term}
                         placeholder="Search..."
                         classes={{

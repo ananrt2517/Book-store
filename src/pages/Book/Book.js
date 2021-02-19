@@ -73,7 +73,7 @@ export default function Book(props) {
         />
         <CardMedia
           className={classes.media}
-          image={''}
+          image={'/'}
           title={current.title}
         />
         <CardContent>
