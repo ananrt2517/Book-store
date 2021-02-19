@@ -10,7 +10,7 @@ import homeStyle from "./style";
 const useStyles = makeStyles(homeStyle);
 
 export default function Home() {
-    const dispatch = useDispatch();
+    
     const { books, isLoading } = useSelector(state => state)
     const classes = useStyles();
 
@@ -32,14 +32,14 @@ export default function Home() {
             {isLoading && <Spinner/>}
             <div className={classes.bookCard}>
                 {books && books.docs?.map(item => 
-                <div key={item.key}>
-                    <Card 
+                    <Card
+                        book_key={item.key}
+                        key={item.key}
                         title={item.title} 
                         author={item && <div>{item.author_name}</div>} 
                         firstPublichYear={item.first_publish_year}
                         image={handleImage(item)}/>
-                    <br></br>
-                </div>)}
+                )}
             </div>
         </Container>
     )

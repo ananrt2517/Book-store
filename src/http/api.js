@@ -7,6 +7,13 @@ export const getBooksApi = async (query) =>{
     } catch (error) {
         return error.message
     }
-    
-    
+}
+
+export const getBookIndividuallyApi = async (key) => {
+    try {
+        const { data } = await http.get(`/works/${key}.json`);
+        return data
+    } catch (error) {
+        return error.message;
+    }
 }

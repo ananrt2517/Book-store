@@ -7,6 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+  const history = useHistory();
+  const uniqueKey = props.book_key.split("/")[2];
 
   return (
     <Card className={classes.root}>
@@ -43,7 +46,7 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={props.onClick}>
+        <Button onClick={() => history.push(`/${uniqueKey}`)} size="small" color="primary">
           Learn More
         </Button>
       </CardActions>
