@@ -1,13 +1,15 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { GET_BOOK_REQUEST, getBookSuccess, getBookFail} from './actions';
+import { GET_BOOK_REQUEST, getBookSuccess, getBookFailed} from './actions';
 import { getBooksApi } from '../http/api'
 
 function* getBookRequest(action) {
     try {
-        const data = yield call(getBooksApi);
+        const data = yield call(getBooksApi, action.query);
+
         yield put(getBookSuccess(data));
     } catch (e) {
-        console.log(e.message)
+        console.log(e.message);
+        yield put(getBookFailed());
     }
 }
 
