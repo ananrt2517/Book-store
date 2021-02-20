@@ -1,6 +1,6 @@
 import http from './http';
 
-export const getBooksApi = async (query) =>{
+export const getBooksApi = async (query) => {
     try {
         const { data } = await http.get(`/search.json?q=${query}`);
         return data

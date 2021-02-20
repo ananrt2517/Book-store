@@ -1,4 +1,3 @@
-import { SatelliteSharp } from '@material-ui/icons';
 import { GET_BOOK_REQUEST, GET_BOOK_SUCCESS, GET_BOOK_FAILED, GET_BOOK_INDIVIDUALLY_REQUEST, GET_BOOK_INDIVIDUALLY_SUCCESS } from './actions';
 
 
@@ -10,7 +9,7 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_BOOK_REQUEST: 
+        case GET_BOOK_REQUEST:
             return {
                 ...state, isLoading: true
             }
@@ -35,8 +34,8 @@ const reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state, current: action.payload, isLoading: false
             }
-            
-        default: 
+
+        default:
             return state;
     }
 };

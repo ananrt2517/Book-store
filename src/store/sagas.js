@@ -1,5 +1,5 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { GET_BOOK_REQUEST, getBookSuccess, getBookFailed, getBookIndividuallySuccess, GET_BOOK_INDIVIDUALLY_REQUEST} from './actions';
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { GET_BOOK_REQUEST, getBookSuccess, getBookFailed, getBookIndividuallySuccess, GET_BOOK_INDIVIDUALLY_REQUEST } from './actions';
 import { getBooksApi, getBookIndividuallyApi } from '../http/api'
 
 function* getBookRequest(action) {

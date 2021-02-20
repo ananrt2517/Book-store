@@ -1,10 +1,8 @@
 import './style.js';
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Menu as MenuIcon } from '@material-ui/icons';
 import headerStyle from './style';
-import { useSelector, useDispatch } from 'react-redux';
 import Search from '../Search/Search';
 
 

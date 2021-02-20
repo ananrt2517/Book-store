@@ -31,7 +31,7 @@ export default function Search() {
                     </div>
                     <InputBase
                         onChange={(event) => {
-                            if(history.location.pathname === "/")
+                            if (history.location.pathname === "/")
                                 setTerm(event.target.value)
                             else history.push("/");
                         }}
